@@ -1,6 +1,6 @@
 <?php
 
-class PluginAdvrating_ModuleRatinglog_MapperRatinglog extends Mapper
+class PluginRatinglog_ModuleRatinglog_MapperRatinglog extends Mapper
 {
 
 

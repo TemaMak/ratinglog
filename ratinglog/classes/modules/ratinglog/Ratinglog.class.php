@@ -1,5 +1,5 @@
 <?php 
-class PluginAdvrating_ModuleRatinglog extends Module
+class PluginRatinglog_ModuleRatinglog extends Module
 {
 
 	public function Init() {

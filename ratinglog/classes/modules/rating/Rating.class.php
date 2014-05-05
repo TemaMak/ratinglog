@@ -1,6 +1,6 @@
 <?php
 
-class PluginAdvrating_ModuleRating extends PluginAdvrating_Inherit_ModuleRating
+class Pluginratinglog_ModuleRating extends Pluginratinglog_Inherit_ModuleRating
 {
 
 
@@ -14,8 +14,7 @@ class PluginAdvrating_ModuleRating extends PluginAdvrating_Inherit_ModuleRating
     	$oUser->setRating($iRatingNew);  
     	
     	$this->User_Update($oUser);
-    	$this->PluginAdvrating_Seasonrating_Update($oUser,$iRatingDelta);
-    	$this->PluginAdvrating_Ratinglog_SaveLog($oUser,$iRatingDelta,$iSkillDelta,$iActionId,$sActionComment);
+    	$this->PluginRatinglog_Ratinglog_SaveLog($oUser,$iRatingDelta,$iSkillDelta,$iActionId,$sActionComment);
     }
     
 
@@ -53,9 +52,9 @@ class PluginAdvrating_ModuleRating extends PluginAdvrating_Inherit_ModuleRating
     		
     		$iSkillDelta = ($iValue*$iDelta);
     		
-    		$sLinkName = $this->Lang_Get('plugin.advrating.action_link_name');
+    		$sLinkName = $this->Lang_Get('plugin.ratinglog.action_link_name');
     		$sRatingComment = 
-    					$this->Lang_Get('plugin.advrating.action_prefix')
+    					$this->Lang_Get('plugin.ratinglog.action_prefix')
     					.' <a href="'.$oComment->getTarget()->getUrl().'#comment'.$oComment->getId().'">'.$sLinkName['comment'].'</a>';
     		
     		$this->Rating_UpdateRatingAndSkill(
@@ -110,9 +109,9 @@ class PluginAdvrating_ModuleRating extends PluginAdvrating_Inherit_ModuleRating
     		$iSkillDelta = $iValue*$iDelta;
 			$iRatingDelta = $iValue*$iDelta/2.73;
     		
-    		$sLinkName = $this->Lang_Get('plugin.advrating.action_link_name');
+    		$sLinkName = $this->Lang_Get('plugin.ratinglog.action_link_name');
     		$sRatingComment = 
-    					$this->Lang_Get('plugin.advrating.action_prefix')
+    					$this->Lang_Get('plugin.ratinglog.action_prefix')
     					.' <a href="'.$oTopic->getUrl().'">'.$sLinkName['topic'].'</a>';
     		
     		$this->Rating_UpdateRatingAndSkill(
@@ -157,9 +156,9 @@ class PluginAdvrating_ModuleRating extends PluginAdvrating_Inherit_ModuleRating
     		
 			$iRatingDelta = $iValue*$iDelta;
     		
-    		$sLinkName = $this->Lang_Get('plugin.advrating.action_link_name');
+    		$sLinkName = $this->Lang_Get('plugin.ratinglog.action_link_name');
     		$sRatingComment = 
-    					$this->Lang_Get('plugin.advrating.action_prefix')
+    					$this->Lang_Get('plugin.ratinglog.action_prefix')
     					.' <a href="'.Router::GetPath('profile').$oUserTarget->getLogin().'">'.$sLinkName['user'].'</a>';
     		
     		$this->Rating_UpdateRatingAndSkill(

@@ -1,12 +1,10 @@
---
--- SQL, которые надо выполнить движку при активации плагина админом. Вызывается на исполнение ВРУЧНУЮ в /plugins/PluginAbcplugin.class.php в методе Activate()
--- Например:
-
-CREATE TABLE IF NOT EXISTS prefix_event_params(
-  event_id BIGINT(20) NOT NULL,
-  date_start DATE DEFAULT NULL,
-  date_stop DATE DEFAULT NULL,
-  event_avatar TEXT DEFAULT NULL,
-  PRIMARY KEY (event_id)
-)
-ENGINE = INNODB  DEFAULT CHARSET=utf8
+CREATE TABLE IF NOT EXISTS `social_32_rating_log` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `user_id` int(11) NOT NULL,
+  `add_date` datetime NOT NULL,
+  `rating_delta_value` double NOT NULL,
+  `comment` varchar(1023) NOT NULL,
+  `action_id` enum('comment','topic','blog','user','image','event') NOT NULL,
+  `skill_delta_value` double NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=INNODB  DEFAULT CHARSET=utf8;

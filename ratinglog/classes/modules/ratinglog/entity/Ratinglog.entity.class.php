@@ -1,13 +1,6 @@
 <?php
 
-/**
- * Image entity
- *
- * @method ModuleUser_EntityUser getUser
- * @method boolean getIsFavourite
- */
-
-class PluginAdvrating_ModuleRatinglog_EntityRatinglog extends Entity
+class PluginRatinglog_ModuleRatinglog_EntityRatinglog extends Entity
 {
 	
      public function getSkillDeltaValue($iPrecision =0 ){
